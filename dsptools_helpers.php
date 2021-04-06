@@ -1,9 +1,9 @@
 <?php
 
-if (!function_exists('Dspw_PirepFields')) {
+if (!function_exists('Dspt_PirepFields')) {
   // Check Pirep Field Values And Format Them
   // Return String with HTML codes
-  function Dspw_PirepFields($field_slug,$field_value) {
+  function Dspt_PirepFields($field_slug,$field_value) {
     $error = null;
     if(is_numeric($field_value)) {
       // Landing Rate
@@ -13,7 +13,12 @@ if (!function_exists('Dspw_PirepFields')) {
       }
       // Threshold Distance
       elseif($field_slug === 'threshold-distance') {
-        $field_value = number_format($field_value)." ft".$error;
+        // $field_value = number_format($field_value)." ft".$error;
+        if(setting('units.distance') === 'km' ) {
+          $field_value = number_format($field_value / 3.2808)." m".$error;
+        } else {
+          $field_value = number_format($field_value)." ft".$error;
+        }
       }
       // Landing G-Force
       elseif($field_slug === 'landing-g-force') {
@@ -21,7 +26,7 @@ if (!function_exists('Dspw_PirepFields')) {
       }
       // Fuel Values
       elseif(strpos($field_slug, '-fuel') !== false) {
-        if(setting('units.fuel') === 'kg') { $field_value = $field_value / 2.204622621; }
+        if(setting('units.fuel') === 'kg') { $field_value = $field_value / 2.20462262185; }
         if($field_value < 0) { $error = " <i class='fas fa-exclamation-triangle ml-2' style='color:firebrick;' title='Negative Fuel !'></i>" ;}
         if($field_value <= 10) {
           $field_value = number_format($field_value, 2) ." ". setting('units.fuel').$error;
@@ -31,7 +36,7 @@ if (!function_exists('Dspw_PirepFields')) {
       }
       // Weight Values
       elseif(strpos($field_slug, '-weight') !== false) {
-        if(setting('units.weight') === 'kg') { $field_value = $field_value / 2.204622621; }
+        if(setting('units.weight') === 'kg') { $field_value = $field_value / 2.20462262185; }
         $field_value = number_format($field_value) ." ". setting('units.weight').$error;
       }
       // Pitch, Roll, Heading : Angle
@@ -50,7 +55,7 @@ if (!function_exists('Dspw_PirepFields')) {
     }
     // Dates
     elseif(strpos($field_slug, 'off-time') !== false || strpos($field_slug, 'ing-time') !== false || strpos($field_slug, 'on-time') !== false) {
-      $field_value = Carbon::parse($field_value)->format('d.M.Y H:i')." UTC";
+      $field_value = Carbon::parse($field_value)->format('H:i')." UTC";
     }
     return $field_value;
   }
