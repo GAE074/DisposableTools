@@ -1,4 +1,3 @@
-# disposable-widgets
-Widgets and Tools for PhpVms v7 (Module)
+# Disposable Widgets and Tools Module
 
 Please have a look at the readme_disposable_tools.txt file for further details.
