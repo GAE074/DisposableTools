@@ -1,0 +1,16 @@
+{
+    "name": "DisposableTools",
+    "alias": "disposabletools",
+    "description": "Widgets and Tools to enhance PhpVms v7 views/pages",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\DisposableTools\\Providers\\DisposableToolsServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        "dsptools_helpers.php"
+    ],
+    "requires": []
+}

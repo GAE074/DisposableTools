@@ -1,0 +1,20 @@
+{
+    "name": "DisposableTools",
+    "type": "phpvms-module",
+    "description": "Widgets and Tools to enhance PhpVms v7 views/pages",
+    "require": {
+        "composer/installers": "~1.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\DisposableTools\\Providers\\DisposableToolsServiceProvider"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\DisposableTools\\": "."
+        }
+    }
+}

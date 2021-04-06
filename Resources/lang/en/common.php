@@ -1,0 +1,43 @@
+<?php
+
+return [
+  // Common
+  'go'          => 'Go',
+  'type'        => 'Type',
+  'code'        => 'Code',
+  'count'       => 'Count',
+  'total'       => 'Total',
+  'result'      => 'Result',
+  'avg'         => 'Average',
+  'hour'        => 'Hour',
+  'hours'       => 'Hours',
+  'minutes'     => 'Minutes',
+  'aircrafts'   => 'Aircrafts',
+  'reg'         => 'Registration',
+  'location'    => 'Location',
+  'stats'       => 'Statistics',
+  'nothing'     => 'Nothing To Display!',
+  'topairports' => 'Top Airports',
+  'topairlines' => 'Top Airlines',
+  'toppilots'   => 'Top Pilots',
+  'bestairline' => 'Best Airline',
+  'bestpilot'   => 'Best Pilot',
+  'landingrate' => 'Landing Rate',
+  'ftimemultip' => 'Flight Time Multiplier',
+  'airportinfo' => 'Airport Informations',
+  'selectap'    => 'Please select an Airport',
+  'multiplier'  => 'Multiplier',
+  'activeu'     => 'Active Users',
+  // Personal Stats
+  'noreports'   => 'No Reports',
+  'avglanding'  => 'Average Landing Rate',
+  'avgscore'    => 'Average Score',
+  'avgdistance' => 'Average Distance',
+  'totdistance' => 'Total Distance',
+  'avgtime'     => 'Average Flight Time',
+  'tottime'     => 'Total Flight Time',
+  'avgfuel'     => 'Average Fuel Burn',
+  'totfuel'     => 'Total Fuel Burn',
+  'totflight'   => 'Total Flights',
+  'lastndays'   => 'Last :period Days'
+];
