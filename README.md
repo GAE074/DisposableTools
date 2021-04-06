@@ -177,8 +177,8 @@ For more information (examples with pictures etc) or support please check PhpVMS
 
 *****
 
-Safe flights and enjoy.
-B.Fatih KOZ
-'Disposable Hero'
-https://github.com/FatihKoz
+Safe flights and enjoy.\
+B.Fatih KOZ\
+'Disposable Hero'\
+https://github.com/FatihKoz\
 06.APR.21
