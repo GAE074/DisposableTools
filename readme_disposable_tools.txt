@@ -30,7 +30,7 @@ Call the widgets anywhere you want like you call/load others
 @widget('Modules\DisposableTools\Widgets\PersonalStats', ['disp' => 'full', 'user' => $user->id])
 @widget('Modules\DisposableTools\Widgets\TopAirlines', ['count' => 3, 'type' => 'flights'])
 @widget('Modules\DisposableTools\Widgets\TopAirports', ['count' => 5, 'type' => 'dep'])
-@widget('Modules\DisposableTools\Widgets\TopPilots' ['type' => 'landingrate'])
+@widget('Modules\DisposableTools\Widgets\TopPilots', ['type' => 'landingrate'])
 
 ***** Options: ActiveUsers
 
