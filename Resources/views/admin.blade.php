@@ -53,7 +53,7 @@
           <td>Provides a list of most used airports by departure or arrival</td>
         </tr>
         <tr>
-          <th>@@widget('Modules\DisposableTools\Widgets\TopPilots' ['type' => 'landingrate'])</th>
+          <th>@@widget('Modules\DisposableTools\Widgets\TopPilots', ['type' => 'landingrate'])</th>
           <td>List your top pilots or best one, now includes Average Landing Rate support (Supports Period Selection)</td>
         </tr>
       </table>
