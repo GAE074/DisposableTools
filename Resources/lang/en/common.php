@@ -24,7 +24,7 @@ return [
   'bestpilot'   => 'Best Pilot',
   'landingrate' => 'Landing Rate',
   'ftimemultip' => 'Flight Time Multiplier',
-  'airportinfo' => 'Airport Informations',
+  'airportinfo' => 'Airport Information',
   'selectap'    => 'Please select an Airport',
   'multiplier'  => 'Multiplier',
   'activeu'     => 'Active Users',
