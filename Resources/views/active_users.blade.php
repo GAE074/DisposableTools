@@ -10,7 +10,7 @@
       <table class="table table-borderless table-sm table-striped mb-0 text-left">
         @foreach($activeusers->sortBy('user_id') as $au)
           <tr>
-            <th><a href="{{ route('frontend.profile.show', [$au->user->id]) }}">{{ $au->user->name_private }}</a></th>
+            <th><a href="{{ route('frontend.profile.show', [$au->user_id]) }}">{{ $au->user->name_private ?? '' }}</a></th>
             <td class="text-right">{{ Carbon::createFromTimestamp($au->last_activity)->diffForHumans() }}</td>
           </tr>
         @endforeach

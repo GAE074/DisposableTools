@@ -15,10 +15,10 @@
         </tr>
         @foreach($aircrafts as $ac)
           <tr>
-            <td class="text-left">@if ($ac->registration) {{ $ac->registration }} @endif</td>
-            <td>{{ $ac->icao }}</td>
-            <td>{{ $ac->subfleet->airline->name }}</td>
-            <td>{{ $ac->subfleet->name }}</td>
+            <td class="text-left">{{ $ac->registration ?? '' }}</td>
+            <td>{{ $ac->icao ?? '' }}</td>
+            <td>{{ $ac->subfleet->airline->name ?? '' }}</td>
+            <td>{{ $ac->subfleet->name ?? '' }}</td>
           </tr>
         @endforeach
       </table>

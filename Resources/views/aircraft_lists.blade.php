@@ -20,7 +20,7 @@
             @if ($config['type'] === 'icao') 
               {{ $ac->icao }}
             @elseif ($config['type'] === 'location') 
-              <a href="{{route('frontend.airports.show', [$ac->airport_id])}}" target="_blank">{{ $ac->airport->name ?? $ac->airport_id}}</a>
+              <a href="{{route('frontend.airports.show', [$ac->airport_id])}}">{{ $ac->airport->name ?? $ac->airport_id}}</a>
             @endif
           </td>
           <td class="text-right">{{ $ac->result }}</td>

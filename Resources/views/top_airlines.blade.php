@@ -31,13 +31,15 @@
         @endif
         @foreach($tairlines as $ta)
           <tr>
-            <td class="text-left">{{ $ta->airline->name }}</td>
+            <td class="text-left">{{ $ta->airline->name ?? 'Deleted Airline' }}</td>
           @if($config['type'] === 'time')
             <td>@minutestotime($ta->totals)</td>
           @elseif($config['type'] === 'distance')
             <td>
               @if(setting('units.distance') === 'km')
                 {{ number_format($ta->totals * 1.852) }}
+              @elseif(setting('units.distance') === 'mi')
+                {{ number_format($ta->totals * 1.15078) }}
               @else
                 {{ number_format($ta->totals) }}
               @endif

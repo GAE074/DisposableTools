@@ -20,25 +20,25 @@
             <td class="text-left">{{ $pirep->airline->iata ?? $pirep->airline->icao }} {{ $pirep->ident }}</td>
             <td>
               @if($config['location'] != $pirep->dpt_airport_id)
-                <a href="{{ route('frontend.airports.show', [$pirep->dpt_airport_id]) }}">{{ $pirep->dpt_airport->icao }}</a>
+                <a href="{{ route('frontend.airports.show', [$pirep->dpt_airport_id]) }}">{{ $pirep->dpt_airport_id }}</a>
               @else
-                {{ $pirep->dpt_airport->icao }}
+                {{ $pirep->dpt_airport_id }}
               @endif
             </td>
             <td>
               @if($config['location'] != $pirep->arr_airport_id)
-                <a href="{{ route('frontend.airports.show', [$pirep->arr_airport_id]) }}">{{ $pirep->arr_airport->icao }}</a>
+                <a href="{{ route('frontend.airports.show', [$pirep->arr_airport_id]) }}">{{ $pirep->arr_airport_id }}</a>
               @else
-                {{ $pirep->arr_airport->icao }}
+                {{ $pirep->arr_airport_id }}
               @endif
             </td>
             <td>
               @if($pirep->aircraft)
-                {{ $pirep->aircraft->registration }} ({{ $pirep->aircraft->icao }}) 
+                {{ $pirep->aircraft->registration ?? '' }} ({{ $pirep->aircraft->icao ?? '' }}) 
               @endif
             </td>
             <td>@minutestotime($pirep->flight_time)</td>
-            <td><a href="{{ route('frontend.users.show.public', [$pirep->user->id]) }}">{{ $pirep->user->name_private }}</a></td>
+            <td><a href="{{ route('frontend.users.show.public', [$pirep->user_id]) }}">{{ $pirep->user->name_private ?? 'Deleted User'}}</a></td>
           </tr>
         @endforeach
       </table>

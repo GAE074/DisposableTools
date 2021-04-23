@@ -1,7 +1,7 @@
 {
     "name": "DisposableTools",
     "type": "phpvms-module",
-    "description": "Widgets and Tools to enhance PhpVms v7 views/pages",
+    "description": "Widgets and Tools to enhance PhpVms v7",
     "require": {
         "composer/installers": "~1.0"
     },

@@ -14,7 +14,7 @@ class AircraftStats extends Widget
 
   public function run()
   {
-    if($this->config['id']) {
+    if ($this->config['id']) {
       $ac = Aircraft::find($this->config['id']);
       if(!$ac) {
         $acreg = null;
@@ -31,18 +31,20 @@ class AircraftStats extends Widget
       $acfuelused = $squery->where('source', PirepSource::ACARS)->sum('fuel_used');
       $acdistance = $squery->where('source', PirepSource::ACARS)->sum('distance');
       $acavglrate = $squery->where('source', PirepSource::ACARS)->avg('landing_rate');
-      if(!$acflttime) {
+      if (!$acflttime) {
         $acavgfuelh = null;
       } else {
         $acavgfuelh = ($acfuelused / $acflttime) * 60;
       }
       // Covert According to settings
-      if(setting('units.fuel') === 'kg') {
+      if (setting('units.fuel') === 'kg') {
         $acfuelused = $acfuelused / 2.20462262185;
         $acavgfuelh = $acavgfuelh / 2.20462262185;
       }
-      if(setting('units.distance') === 'km') {
+      if (setting('units.distance') === 'km') {
         $acdistance = $acdistance * 1.852;
+      } elseif (setting('units.distance') === 'mi') {
+        $acdistance = $acdistance * 1.15078;
       }
 
       return view('DisposableTools::aircraft_stats', [

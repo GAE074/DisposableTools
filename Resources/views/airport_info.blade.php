@@ -14,7 +14,7 @@
     </select>
   </div>
   <div class="card-footer p-1 text-right">
-    <a id="generate_link" style="visibility: hidden;" href="{{route('frontend.airports.show','' ) }}" class="btn btn-sm btn-secondary">@lang('DisposableTools::common.go')</a>
+    <a id="generate_link" style="visibility: hidden;" href="{{route('frontend.airports.show','' ) }}" class="btn btn-sm btn-primary">@lang('DisposableTools::common.go')</a>
   </div>
 </div>
 

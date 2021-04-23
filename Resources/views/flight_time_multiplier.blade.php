@@ -1,5 +1,10 @@
 <div class="card mb-2">
-  <div class="card-header p-1"><h5 class="m-1 p-0"><i class="fas fa-equals float-right"></i>@lang('DisposableTools::common.ftimemultip')</h5></div>
+  <div class="card-header p-1">
+    <h5 class="m-1 p-0">
+      @lang('DisposableTools::common.ftimemultip')
+      <i class="fas fa-equals float-right"></i>
+    </h5>
+  </div>
   <div class="card-body p-1">
     <form class="form-group" id="ftmultip">
       <div class="row row-cols-2 mb-1">

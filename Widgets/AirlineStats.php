@@ -37,13 +37,22 @@ class AirlineStats extends Widget
       $totalfuel = Pirep::where('state', PirepState::ACCEPTED)->sum('fuel_used');
     }
 
-    $avgfuel = $totalfuel / $totalpirep;
-    $avgfuelh = ($totalfuel / $totaltime) * 60;
-    $avgdist = $totaldistance / $totalpirep;
+    if ($totalpirep === 0) {
+      $avgfuel = 0;
+      $avgfuelh = 0;
+      $avgdist = 0;
+    } else {
+      $avgfuel = $totalfuel / $totalpirep;
+      $avgfuelh = ($totalfuel / $totaltime) * 60;
+      $avgdist = $totaldistance / $totalpirep;
+    }
 
     if (setting('units.distance') === 'km') {
       $totaldistance = number_format($totaldistance * 1.852);
       $avgdist = number_format($avgdist * 1.852);
+    } elseif (setting('units.distance') === 'mi') {
+      $totaldistance = number_format($totaldistance * 1.15078);
+      $avgdist = number_format($avgdist * 1.15078);
     } else {
       $totaldistance = number_format($totaldistance);
       $avgdist = number_format($avgdist);

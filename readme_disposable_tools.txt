@@ -2,12 +2,12 @@
 
 Module provides some widgets and tools for your v7 installation. 
 
-***** Installation Steps
+***** Manual Installation Steps
 
 Upload contents of the module (or pull via GitHub) to your root/modules/DisposableTools folder.
 
 Go to admin section and enable the module, that's all.
-After enabling/disabling modules an app cache cleaning process may be necessary (check admin/maintenance).
+After enabling/disabling modules an app cache cleaning process IS necessary (check admin/maintenance).
 
 Note for old version users:
 

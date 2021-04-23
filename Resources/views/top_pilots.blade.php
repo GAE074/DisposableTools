@@ -33,13 +33,15 @@
         @endif
         @foreach($tpilots as $tp)
           <tr>
-            <td class="text-left"><a href="{{ route('frontend.profile.show', [$tp->user_id]) }}">{{ $tp->user->name_private }}</a></td>
+            <td class="text-left"><a href="{{ route('frontend.profile.show', [$tp->user_id]) }}">{{ $tp->user->name_private ?? 'Deleted User' }}</a></td>
             <td>
               @if($config['type'] === 'time')
                 @minutestotime($tp->totals)
               @elseif($config['type'] === 'distance')
                 @if(setting('units.distance') === 'km')
                   {{ number_format($tp->totals * 1.852) }}
+                @elseif(setting('units.distance') === 'mi')
+                  {{ number_format($tp->totals * 1.15078) }}
                 @else
                   {{ number_format($tp->totals) }}
                 @endif
