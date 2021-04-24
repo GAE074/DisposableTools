@@ -84,7 +84,7 @@ use \Nwidart\Modules\Facades\Module;
   // Format RouteCode
   // Return string
   if (!function_exists('Dispo_RouteCode')) {
-  function Dispo_RouteCode($route_code)
+    function Dispo_RouteCode($route_code)
     {
       if(Dispo_Modules('DisposableTours'))
       {
