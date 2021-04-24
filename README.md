@@ -2,7 +2,7 @@
 
 Module provides some widgets and tools for your v7 installation. 
 
-***** Installation Steps
+***** Manual Installation Steps
 
 Upload contents of the module (or pull via GitHub) to your root/modules/DisposableTools folder.
 

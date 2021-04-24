@@ -1,29 +1,82 @@
 <?php
+use \App\Models\Flight;
+use \App\Models\Enums\AircraftState;
+use \App\Models\Enums\AircraftStatus;
+use \App\Models\Enums\PirepState;
+use \App\Models\Enums\UserState;
+use \Nwidart\Modules\Facades\Module;
+
   // Check Disposable Modules
   // Return boolean
   if (!function_exists('Dispo_Modules')) {
     function Dispo_Modules($module)
     {
       $module_enabled = false;
-      $dispo_module = Nwidart\Modules\Facades\Module::find($module);
-      if($dispo_module) {
-        $module_enabled = $dispo_module->isEnabled();
-      }
+      $dispo_module = Module::find($module);
+      if($dispo_module) { $module_enabled = $dispo_module->isEnabled(); }
       return $module_enabled;
     }
   }
 
-  // Format PirepBadge
+  // Format Pirep State Badge
   // Return formatted string (with html tags)
   if (!function_exists('Dispo_PirepBadge')) {
     function Dispo_PirepBadge($pirepstate)
     {
-      if($pirepstate === PirepState::PENDING) { $color = 'warning'; }
-      elseif($pirepstate === PirepState::ACCEPTED) { $color = 'success'; }
-      elseif($pirepstate === PirepState::REJECTED) { $color = 'danger'; }
-      else { $color = 'info'; }
+      $color = 'primary';
+      if($pirepstate === 0 || $pirepstate === 5) { $color = 'info'; }
+      elseif($pirepstate === 1) { $color = 'secondary'; }
+      elseif($pirepstate === 2) { $color = 'success'; }
+      elseif($pirepstate === 3) { $color = 'warning'; }
+      elseif($pirepstate === 4 || $pirepstate === 6) { $color = 'danger'; }
 
       $result = "<span class='badge badge-".$color."'>".PirepState::label($pirepstate)."</span>";
+      return $result;
+    }
+  }
+
+  // Format User State Badge
+  // Return formatted string (with html tags)
+  if (!function_exists('Dispo_UserStateBadge')) {
+    function Dispo_UserStateBadge($state)
+    {
+      $color = 'primary';
+      if($state === 0) { $color = 'secondary'; }
+      elseif($state === 1) { $color = 'success'; }
+      elseif($state === 3) { $color = 'warning'; }
+      elseif($state === 2 || $state === 4 || $state === 5) { $color = 'danger'; }
+
+      $result = "<span class='badge badge-".$color."'>".UserState::label($state)."</span>";
+      return $result;
+    }
+  }
+
+  // Format Aircraft State Badge
+  // return formatted string (with html tags)
+  if (!function_exists('Dispo_AcStateBadge')) {
+    function Dispo_AcStateBadge($state)
+    {
+      $color = 'primary';
+      if($state === 0) { $color = 'success'; }
+      elseif($state === 1) { $color = 'info'; }
+      elseif($state === 2) { $color = 'warning'; }
+
+      $result = "<span class='badge badge-".$color."'>".AircraftState::label($state)."</span>";
+      return $result;
+    }
+  }
+
+  // Format Aircraft Status Badge
+  // return formatted string (with html tags)
+  if (!function_exists('Dispo_AcStatusBadge')) {
+    function Dispo_AcStatusBadge($status)
+    {
+      $color = 'primary';
+      if($status === 'A') { $color = 'success'; }
+      elseif($status === 'S' || $status === 'R') { $color = 'warning'; }
+      elseif($status === 'C' || $status === 'W') { $color = 'danger'; }
+
+      $result = "<span class='badge badge-".$color."'>".AircraftStatus::label($status)."</span>";
       return $result;
     }
   }
@@ -31,9 +84,10 @@
   // Format RouteCode
   // Return string
   if (!function_exists('Dispo_RouteCode')) {
-    function Dispo_RouteCode($route_code)
+  function Dispo_RouteCode($route_code)
     {
-      if(Dispo_Modules('DisposableTours')) {
+      if(Dispo_Modules('DisposableTours'))
+      {
         $route_code = Dsp_TourName($route_code);
         return $route_code;
       }
@@ -51,13 +105,15 @@
     {
       $unit = setting('units.distance');
       $runway_lenght = number_format($runway->lenght)." m";
-      if($unit === 'mi'|| $unit === 'nmi') {
+      if($unit === 'mi'|| $unit === 'nmi')
+      {
         $runway_lenght = number_format($runway->lenght * 3.28084)." ft";
       }
 
       $runway_data = $runway->runway_ident." : ".$runway_lenght;
 
-      if($runway->ils_freq && $runway->loc_course) {
+      if($runway->ils_freq && $runway->loc_course)
+      {
         $runway_data = $runway_data." > ".$runway->ils_freq." Mhz ".$runway->loc_course."&deg;";
       }
 
@@ -68,13 +124,15 @@
   // Filter Flight Types
   // return collection (of only used flight types at flights)
   if (!function_exists('Dispo_FlightTypes')) {
-    function Dispo_FlightTypes() {
-      $usedtypes = \App\Models\Flight::select('flight_type')->groupby('flight_type')->orderby('flight_type', 'asc')->get();
+    function Dispo_FlightTypes()
+    {
+      $usedtypes = Flight::select('flight_type')->groupby('flight_type')->orderby('flight_type', 'asc')->get();
       return $usedtypes;
     }
   }
 
   // Generic Value Rounder with Weight Converter
+  // Conversion part designed for SimBrief Briefing Blade
   // Return Numeric String
   if (!function_exists('Dispo_Round')) {
     function Dispo_Round($value, $round, $conv = null)
