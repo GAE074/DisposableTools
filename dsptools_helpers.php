@@ -88,7 +88,7 @@ use \Nwidart\Modules\Facades\Module;
     {
       if(Dispo_Modules('DisposableTours'))
       {
-        $route_code = Dsp_TourName($route_code);
+        $route_code = Dispo_TourName($route_code);
         return $route_code;
       }
       if($route_code === 'H'){ $route_code = 'Historic' ;}
