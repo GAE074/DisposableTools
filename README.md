@@ -30,7 +30,9 @@ Call the widgets anywhere you want like you call/load others
 @widget('Modules\DisposableTools\Widgets\PersonalStats', ['disp' => 'full', 'user' => $user->id])\
 @widget('Modules\DisposableTools\Widgets\TopAirlines', ['count' => 3, 'type' => 'flights'])\
 @widget('Modules\DisposableTools\Widgets\TopAirports', ['count' => 5, 'type' => 'dep'])\
-@widget('Modules\DisposableTools\Widgets\TopPilots', ['type' => 'landingrate'])\
+@widget('Modules\DisposableTools\Widgets\TopPilots', ['type' => 'landingrate'])
+
+@widget('Modules\DisposableTools\Widgets\SunriseSunset', ['location' => $airport->id])
 
 ***** Options: ActiveUsers
 
@@ -170,6 +172,16 @@ period can be currentm, lastm, prevm, currenty or lasty
 
 By default widget will report overall top 3 pilots by their flight counts\
 If you want to see your "Best" pilot, just set the count to 1
+
+***** Options : SunriseSunset
+
+This widget has only one option called *location* and it displays sunrise/sunset times of given location.
+
+location *must* be an airport_id (4 letter ICAO code)
+
+['location' => 'LTAI'] or\
+['location' => $airport->id] if you are going to use it in Airports page\
+['location' => $flight->dpt_airport_id] if you are going to use it in Bids or Flight Details page
 
 *****
 
