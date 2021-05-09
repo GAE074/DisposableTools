@@ -18,6 +18,22 @@ use \Nwidart\Modules\Facades\Module;
     }
   }
 
+  // Decode Dates Of Flights
+  // Return string
+  if (!function_exists('Dispo_FlightDays')) {
+    function Dispo_FlightDays($flight_days)
+    {
+      $days = array();
+      for($i=0;$i<7;$i++) {
+        if($flight_days & pow(2,$i)) {
+          $days[]=jddayofweek($i,1);
+        }
+      }
+      $result = implode(",",$days);
+      return $result;
+    }
+  }
+
   // Format Pirep State Badge
   // Return formatted string (with html tags)
   if (!function_exists('Dispo_PirepBadge')) {
