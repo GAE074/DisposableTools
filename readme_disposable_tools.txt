@@ -34,7 +34,7 @@ Call the widgets anywhere you want like you call/load others
 @widget('Modules\DisposableTools\Widgets\TopPilots', ['type' => 'landingrate'])
 
 @widget('Modules\DisposableTools\Widgets\SunriseSunset', ['location' => $airport->id])
-@widget('Modules\DisposableTools\Widgets\FlightsMap', ['sourcce' => $hub->id])
+@widget('Modules\DisposableTools\Widgets\FlightsMap', ['source' => $hub->id])
 
 ***** Options: ActiveUsers
 
