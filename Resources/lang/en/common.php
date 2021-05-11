@@ -45,5 +45,10 @@ return [
   'twilight_begin' => 'Civil Twilight Begin',
   'twilight_end'   => 'Civil Twilight End',
   'sunrise'        => 'Sunrise',
-  'sunset'         => 'Sunset'
+  'sunset'         => 'Sunset',
+  // Map Widget
+  'flights_map'  => 'Flights Map',
+  'personal_map' => 'My Flights / PIREPs Map',
+  'citypairs'    => 'CityPairs',
+  'airports'     => 'Airports'
 ];

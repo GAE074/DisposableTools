@@ -2,6 +2,7 @@
   <div class="card-header p-1">
     <h5 class="m-1 p-0">
       @lang('DisposableTools::common.sundetails')
+      @if(isset($location)) | {{ $location }} @endif
       <i class="fas fa-adjust float-right"></i>
     </h5>
   </div>

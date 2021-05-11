@@ -25,7 +25,7 @@ class SunriseSunset extends Widget
     if(!$details) {
       $error = "Can Not Calculate Sunrise/Sunset Details For Given Coordinates !";
       return view('DisposableTools::sunrise_sunset',['error' => $error]);
-    } 
+    }
 
     foreach($details as $key => $value) {
       if($key === 'civil_twilight_begin') { $twilight_begin = $value; }
@@ -36,6 +36,7 @@ class SunriseSunset extends Widget
 
     return view('DisposableTools::sunrise_sunset',[
       'details'        => $details,
+      'location'       => $this->config['location'],
       'twilight_begin' => $twilight_begin,
       'sunrise'        => $sunrise,
       'sunset'         => $sunset,
