@@ -1,4 +1,5 @@
 # Disposable Tools And Widgets For PhpVms v7
+# 11.MAY.2021
 
 Module provides some widgets and tools for your v7 installation. 
 
@@ -33,6 +34,7 @@ Call the widgets anywhere you want like you call/load others
 @widget('Modules\DisposableTools\Widgets\TopPilots', ['type' => 'landingrate'])
 
 @widget('Modules\DisposableTools\Widgets\SunriseSunset', ['location' => $airport->id])
+@widget('Modules\DisposableTools\Widgets\FlightsMap', ['sourcce' => $hub->id])
 
 ***** Options: ActiveUsers
 
@@ -183,6 +185,25 @@ location *must* be an airport_id (4 letter ICAO code)
 ['location' => $airport->id] if you are going to use it in Airports page
 ['location' => $flight->dpt_airport_id] if you are going to use it in Bids or Flight Details page
 
+***** Options : FlightsMap
+
+Shows a Leaflet map from flights or user pireps, Leatlet map itself can be configured/styled via widget blade file if needed.
+Has 3 main options, these are *source* , *visible* and *limit* . Visible and limit should be used in custom cases, provided defaults for them are ok for generic usage.
+
+if used source *can* be an airport_id (4 letter ICAO code), an airline_id or user (not user_id, plain text *user*) or can be skipped at all.
+if used visible *must* be either false or true (it show visible flights or hides them - default is true like phpvms and only visible flights are used)
+if used limit *must* be a numeric value like 50, which will limit the flights being drawn on the map. Default is *null* so all flights are drawn.
+
+['source' => 'LTAI'] or\
+['source' => $airport->id] if you are going to use it in Airports page
+['source' => $hub->id] if you are going to use it in Disposable Hubs Module: Hub Page
+['source' => $airline->id] if you are going to use it in Disposable Airlines Module: Airline Page
+['source' => $airline->id, 'limit' => 200] if you are going to use it at Disposable Airlines Module: Airline Page with a limit of max 200 flight.
+['source' => 'user', 'limit' => 100] if you are going to use it at User Profile page with a limit of last 100 pireps.
+
+To use the widget at phpvms Flights page, there is no need to define a source. Just load/call the widget directly.
+It will follow your admin side settings to filter results (like pilots only see their airline's flights or flight's from their current location)
+
 *****
 
 For more information (examples with pictures etc) or support please check PhpVMS Forum, add-ons section.
@@ -194,3 +215,8 @@ B.Fatih KOZ
 'Disposable Hero'
 https://github.com/FatihKoz
 06.APR.21
+
+*** Update Notes 11.MAY.21 ***
+Added two new widgets
+Added Days decoding function
+Fixed some minor error in current widgets
