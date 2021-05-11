@@ -56,6 +56,14 @@
           <th>@@widget('Modules\DisposableTools\Widgets\TopPilots', ['type' => 'landingrate'])</th>
           <td>List your top pilots or best one, now includes Average Landing Rate support (Supports Period Selection)</td>
         </tr>
+        <tr>
+          <th>@@widget('Modules\DisposableTools\Widgets\SunriseSunset', ['location' => $airport->id])</th>
+          <td>Gives times for Sunrise - Sunset and aviation applicable twilight in UTC for given airport</td>
+        </tr>
+        <tr>
+          <th>@@widget('Modules\DisposableTools\Widgets\FlightsMap', ['source' => $hub->id])</th>
+          <td>Displays a leaflet map from given flights or user pireps</td>
+        </tr>
       </table>
       <hr>
       <p><b>Optional Theming</b></p>
