@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col">
       <div class="card p-0 mb-2 border-0">
-        <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#MapModal" onclick="ExpandMap()">
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#MapModal" onclick="ExpandMap()">
           @if($mapsource === 'user') @lang('DisposableTools::common.personal_map') @else @lang('DisposableTools::common.flights_map') @endif
         </button>
       </div>
