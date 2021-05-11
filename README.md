@@ -216,7 +216,7 @@ B.Fatih KOZ\
 https://github.com/FatihKoz\
 06.APR.21
 
-*** Update Notes 11.MAY.21 ***
+***Update Notes 11.MAY.21***\
 Added two new widgets\
 Added Days decoding function\
 Fixed some minor error in current widgets
