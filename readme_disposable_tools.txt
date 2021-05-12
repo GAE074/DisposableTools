@@ -1,5 +1,5 @@
 # Disposable Tools And Widgets For PhpVms v7
-11.MAY.2021
+12.MAY.2021
 
 Module provides some widgets and tools for your v7 installation. 
 
@@ -218,7 +218,9 @@ https://github.com/FatihKoz
 
 ***Update Notes***
 11.MAY.21
-
 * Added two new widgets
 * Added Days decoding function
-* Fixed some minor error in current widgets
+* Fixed some minor errors in current widgets
+
+12.MAY.21
+* Fixed FlightMaps Widget controller (pilot company restriction filter)
