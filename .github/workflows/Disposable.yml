@@ -1,6 +1,8 @@
-name: 'Create Zip Archive'
+name: 'Create Release'
 on:
-  release:
+  push:
+    tags:
+      - '*'
     branches:
       - main
 jobs:
@@ -16,5 +18,6 @@ jobs:
     - name: Upload Release
       uses: ncipollo/release-action@v1
       with:
+        name: 'Disposable Tools Module'
         artifacts: "DisposableTools.zip"
         token: ${{ secrets.GITHUB_TOKEN }}
