@@ -59,7 +59,7 @@ class FlightsMap extends Widget
 
     // Filter Flights to User's Company
     if($type === 'generic' && setting('pilots.restrict_to_company') || $type === 'airport' && setting('pilots.restrict_to_company')) {
-      $mapflights = $mapflights->where('airline', $user->airline_id);
+      $mapflights = $mapflights->where('airline_id', $user->airline_id);
     }
     // Filter Flights To User's Current Location
     if($type === 'generic' && setting('pilots.only_flights_from_current')) {
