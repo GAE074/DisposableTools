@@ -3,7 +3,7 @@
 **Update Notes**
 
 13.MAY.21
-* Added a failsafe to FlightsMap (for initial setup of phpvms, admin has no home or current airport)
+* Added a failsafe to FlightsMap (during initial setup of phpvms, admin has no home or current airport)
 
 12.MAY.21
 * Fixed FlightMaps Widget controller (pilot company restriction filter)
@@ -113,7 +113,7 @@ By default widget will not display any pireps as expected
 
 No options needed, lists your airports and provides a button to visit that Airport's page
 
-(*This widget is developed by Maco and being used in this module by his permission.)
+(*This widget is developed by Maco and being used in this module by his permission.*)
 
 **Options: FlightTimeMultiplier**
 
