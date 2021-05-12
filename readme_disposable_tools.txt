@@ -217,10 +217,11 @@ https://github.com/FatihKoz
 06.APR.21
 
 ***Update Notes***
+12.MAY.21
+* Fixed FlightMaps Widget controller (pilot company restriction filter)
+
 11.MAY.21
 * Added two new widgets
 * Added Days decoding function
 * Fixed some minor errors in current widgets
 
-12.MAY.21
-* Fixed FlightMaps Widget controller (pilot company restriction filter)
