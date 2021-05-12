@@ -19,16 +19,9 @@ Module provides some widgets and tools for your v7 installation.
 
 **Manual Installation Steps**
 
-Upload contents of the module (or pull via GitHub) to your **root/modules/DisposableTools** folder.
-
+Upload contents of the module (or pull via GitHub) to your **root/modules/DisposableTools** folder.  
 Go to admin section and enable the module, that's all.  
 After enabling/disabling modules an app cache cleaning process may be necessary (check admin/maintenance).
-
-*Note for old version users:*
-
-Please remove the old files from app\Widgets and resources\views\layouts\your_theme\widgets folders after switching your blades to new version.\
-No need to have the old files installed under phpvms folders\
-There will be no updates for old versions and future updates to my theme will NOT use old version widgets.
 
 **Usage**
 
@@ -52,16 +45,14 @@ Call the widgets anywhere you want like you call/load others
 ```
 **Options: ActiveUsers**
 
-Nothing except mins (minutes for inactivity timer)
-
+Nothing except mins (minutes for inactivity timer)  
 * ['mins' => 3] Sets timer to 3 mins (default is 5 mins)
 
 **Options : AircraftLists**
 
 This widget has only one option called *type* and it displays either your aircraft count according to their locations or a count according the their ICAO type codes.
 
-type can be location or icao
-
+type can be location or icao  
 * ['type' => 'icao']
 * ['type' => 'location']
 
@@ -69,16 +60,14 @@ By default widget will display aircraft counts per airport
 
 **Options : AircraftStats**
 
-This widget has only one option called id, just provide an aircraft id and stats will be displayed
-
+This widget has only one option called id, just provide an aircraft id and stats will be displayed  
 * ['id' => $aircraft->id]
 
 **Options: AirlineStats**
 
 This widget has only one option called airline and it displays either your total system stats or stats for the airline choosed.
 
-airline can be any airline's id number
-
+airline can be any airline's id number  
 * ['airline' => 3] or
 * ['airline' => {{ $user->airline->id }}] or
 * ['airline' => {{ $flight->airline->id }}] *this depends how and where you want to use the widget
@@ -89,8 +78,7 @@ By default widget will display overall stats of your phpvms installation.
 
 This widget has only one option called *location* and it displays your aircrafts at given location.
 
-location *must* be an airport_id (4 letter ICAO code)
-
+location *must* be an airport_id (4 letter ICAO code)  
 * ['location' => 'LTCG'] or
 * ['location' => $airport->icao] if you are going to use it in Airports page
 * ['location' => $flight->dpt_airport_id] if you are going to use it in Bids or Flight Details page
@@ -101,8 +89,7 @@ By default widget will not display any aircrafts as expected
 
 This widget has only one option called *location* and it displays pireps for given location.
 
-location *must* be an airport_id (4 letter ICAO code)
-
+location *must* be an airport_id (4 letter ICAO code)  
 * ['location' => 'LTAI'] or
 * ['location' => $airport->icao] if you are going to use it in Airports page
 * ['location' => $flight->dpt_airport_id] if you are going to use it in Bids or Flight Details page
@@ -111,8 +98,7 @@ By default widget will not display any pireps as expected
 
 **Options : AirportInfo**
 
-No options needed, lists your airports and provides a button to visit that Airport's page
-
+No options needed, lists your airports and provides a button to visit that Airport's page  
 (*This widget is developed by Maco and being used in this module by his permission.*)
 
 **Options: FlightTimeMultiplier**
@@ -152,8 +138,7 @@ For TopAirlines there are three main options.They are count, type and period;
 
 count can be any number you want (except 0 of course)  
 type can be flights, time or distance  
-period can be currentm, lastm, prevm, currenty or lasty
-
+period can be currentm, lastm, prevm, currenty or lasty  
 * ['count' => 5, 'type' => 'flights']
 * ['count' => 10, 'type' => 'time']
 * ['count' => 8, 'type' => 'distance']
@@ -166,8 +151,7 @@ If you want to see your "Best" airline, just set the count to 1
 For TopAirports there are two options.They are count and type;
 
 count can be any number you want (except 0 of course)  
-type can be dep or arr
-
+type can be dep or arr  
 * ['count' => 8, 'type' => 'dep']
 * ['count' => 5, 'type' => 'arr']
 
@@ -179,8 +163,7 @@ For TopPilots there are three main options.They are count, type and period;
 
 count can be any number you want (except 0 of course)  
 type can be flights, time, distance or landingrate  
-period can be currentm, lastm, prevm, currenty or lasty
-
+period can be currentm, lastm, prevm, currenty or lasty  
 * ['count' => 5, 'type' => 'flights']
 * ['count' => 10, 'type' => 'time']
 * ['count' => 8, 'type' => 'distance']
@@ -193,8 +176,7 @@ If you want to see your "Best" pilot, just set the count to 1
 
 This widget has only one option called *location* and it displays sunrise/sunset times of given location.
 
-location *must* be an airport_id (4 letter ICAO code)
-
+location *must* be an airport_id (4 letter ICAO code)  
 * ['location' => 'LTAI'] or
 * ['location' => $airport->id] if you are going to use it in Airports page
 * ['location' => $flight->dpt_airport_id] if you are going to use it in Bids or Flight Details page
@@ -207,7 +189,6 @@ Has 3 main options, these are *source* , *visible* and *limit* . Visible and lim
 if used source *can* be an airport_id (4 letter ICAO code), an airline_id or user (not user_id, plain text *user*) or can be skipped at all.  
 if used visible *must* be either false or true (it show visible flights or hides them - default is true like phpvms and only visible flights are used)  
 if used limit *must* be a numeric value like 50, which will limit the flights being drawn on the map. Default is *null* so all flights are drawn.  
-
 * ['source' => 'LTAI'] or
 * ['source' => $airport->id] if you are going to use it in Airports page
 * ['source' => $hub->id] if you are going to use it in Disposable Hubs Module: Hub Page
