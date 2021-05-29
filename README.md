@@ -2,6 +2,9 @@
 
 **Update Notes**
 
+29.MAY221
+* Removed deprecated `Dispo_FlightTypes` function from module helpers
+
 13.MAY.21
 * Added a failsafe to FlightsMap (during initial setup of phpvms, admin has no home or current airport)
 
