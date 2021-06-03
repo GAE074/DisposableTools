@@ -19,10 +19,10 @@ class FlightsMap extends Widget
 
     // Get User Details with Failsafe
     $user = Auth::user();
-    if ($user->current_airport) {
+    if ($user && $user->current_airport) {
       $user_a = $user->current_airport->id;
       $user_loc = $user->current_airport->lat.",".$user->current_airport->lon;
-    } elseif ($user->home_airport) {
+    } elseif ($user && $user->home_airport) {
       $user_a = $user->home_airport->id;
       $user_loc = $user->home_airport->lat.",".$user->home_airport->lon;
     } else {
