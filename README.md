@@ -2,7 +2,11 @@
 
 **Update Notes**
 
-29.MAY221
+03.JUN.21
+* Failsafe for $user (thanks @derrobin154)
+* German Translation (thanks @derrobin154)
+
+29.MAY.21
 * Removed deprecated `Dispo_FlightTypes` function from module helpers
 
 13.MAY.21
