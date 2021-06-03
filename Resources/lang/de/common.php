@@ -11,7 +11,7 @@ return [
   'avg' => 'Durchschnitt',
   'hour' => 'Stunde',
   'hours' => 'Stunden',
-  'Minuten' => 'Minuten',
+  'minutes' => 'Minuten',
   'aircrafts' => 'Flugzeuge', 
   'reg' => 'Registrierung',
   'location' => 'Standort',
