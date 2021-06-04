@@ -113,16 +113,16 @@ class PersonalStats extends Widget
     }
     elseif ($this->config['type'] === 'avgdistance' || $this->config['type'] === 'totdistance') {
       if(setting('units.distance') === 'km') {
-        $PersonalStats = number_format(round($PersonalStats * 1.852)) . ' Km';
+        $PersonalStats = number_format(round($PersonalStats * 1.852)) . ' km';
       } else {
-        $PersonalStats = number_format(round($PersonalStats)) . ' Nm';
+        $PersonalStats = number_format(round($PersonalStats)) . ' nm';
       }
     }
     elseif ($this->config['type'] === 'avgfuel' || $this->config['type'] === 'totfuel') {
       if(setting('units.fuel') === 'kg') {
-        $PersonalStats = number_format(round($PersonalStats / 2.20462262185)) . ' Kgs';
+        $PersonalStats = number_format(round($PersonalStats / 2.20462262185)) . ' kg';
       } else {
-        $PersonalStats = number_format(round($PersonalStats)) . ' Lbs';
+        $PersonalStats = number_format(round($PersonalStats)) . ' lbs';
       }
     }
 
