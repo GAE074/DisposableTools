@@ -1,6 +1,8 @@
 ## Disposable Widgets and Tools Module (For PhpVms v7)
-
 **Update Notes**
+
+10.JUN.201
+* Update helpers to show SimBrief Booking state as AC state too.
 
 03.JUN.21
 * Failsafe for $user (thanks @derrobin154)
