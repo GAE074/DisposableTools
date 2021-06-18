@@ -1,7 +1,10 @@
 ## Disposable Widgets and Tools Module (For PhpVms v7)
 **Update Notes**
 
-10.JUN.201
+18.JUN.21
+* FlightMap Widget will show user's flown city pairs with a different color.
+
+10.JUN.21
 * Update helpers to show SimBrief Booking state as AC state too.
 
 03.JUN.21
