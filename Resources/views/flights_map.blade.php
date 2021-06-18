@@ -97,8 +97,11 @@
               $popuptext = $popuptext.$mf->id."' target='_blank'><b>";
               $popuptext = $popuptext.$mf->airline->iata.$mf->flight_number." ".$mf->dpt_airport_id."-".$mf->arr_airport_id."</b></a><br>";
             }
+            if($userpairs->contains($citypair['name'])) { $cp_color = 'darkgreen'; }
+            elseif($userpairs->contains(substr($citypair['name'],4,4).substr($citypair['name'],0,4))) { $cp_color = 'green'; }
+            else { $cp_color = 'crimson' ;}
           @endphp
-          {{ $citypair['name'] }} = L.geodesic([[{{ $citypair['dloc'] }}],[{{ $citypair['aloc'] }}]], {weight: 2, opacity: 0.8, steps: 5, color: 'crimson'}).bindPopup("{!! $popuptext !!}").addTo(mFlights);
+          {{ $citypair['name'] }} = L.geodesic([[{{ $citypair['dloc'] }}],[{{ $citypair['aloc'] }}]], {weight: 2, opacity: 0.8, steps: 5, color: '{{$cp_color}}'}).bindPopup("{!! $popuptext !!}").addTo(mFlights);
         @endforeach
 
         // Define Base Layers For Control Box
